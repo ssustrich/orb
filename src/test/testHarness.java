@@ -2,7 +2,9 @@ package test;
 
 import engine.util.*;
 import engine.util.Dice.*;
+import engine.gamePlay.*;
 import java.util.Vector;
+
 public class testHarness {
 
 	/**
@@ -20,5 +22,9 @@ public class testHarness {
 		System.out.println(v);
 		System.out.println(r1.roll(3, 6));
 		//System.out.println(r2);
-		}
+		
+
+		System.out.println("***");
+		Encounter.test();
 	}
+}

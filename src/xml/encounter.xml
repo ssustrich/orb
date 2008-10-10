@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<encounter>
+	<monster>
+		<type>Skeleton</type>
+		<level>1</level>
+		<hitpoints>10</hitpoints>
+		<thac0>1</thac0>
+		<realm>graveyard</realm>
+		<weakness>blessing</weakness>
+		<loot>5</loot>
+		<treasure>potion</treasure>
+	</monster>
+	
+		<monster>
+		<type>Wraith</type>
+		<level>2</level>
+		<hitpoints>15</hitpoints>
+		<thac0>2</thac0>
+		<realm>Dungeon</realm>
+		<weakness>blessing</weakness>
+		<loot>7</loot>
+		<treasure>mana</treasure>
+	</monster>
+	
+		<monster>
+		<type>Bug Bear</type>
+		<level>3</level>
+		<hitpoints>20</hitpoints>
+		<thac0>1</thac0>
+		<realm>Dungeon</realm>
+		<weakness>Fire</weakness>
+		<loot>4</loot>
+		<treasure>meat</treasure>
+	</monster>
+</encounter>
