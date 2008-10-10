@@ -1,2 +1,5 @@
-Not fit for release :) After checkout type ant
-go to bin directory and type java -jar orb.jar
+#So let me get this straight. I can edit files directly on github?
+Not fit for release :) After checkout type 
+   ant
+go to bin directory and type
+   java -jar orb.jar
