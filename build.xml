@@ -1,0 +1,35 @@
+<project name="Orb" basedir="." default="jar">
+    <property name="src" value="src"/>
+    <property name="output" value="bin"/>
+
+  <target name="compile" depends="create">
+    <javac destdir="${output}">
+	<src path="${src}"/>
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="${output}/orb.jar"
+         basedir="${output}/."
+         includes="**/*.class">
+      <manifest>
+        <attribute name="Main-Class" value="test.testHarness" />
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run" depends="jar">
+    <java classname="test.testHarness"
+          classpath="orb.jar"
+          fork="true"
+          />
+  </target>
+
+    <target name="clean">
+        <delete dir="${output}"/>
+    </target>
+
+    <target name="create" depends="clean">
+        <mkdir dir="${output}"/>
+    </target>
+</project>
