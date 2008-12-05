@@ -1,0 +1,71 @@
+<!--
+	Date Created:		August 31 2006
+-->
+
+<project name="dmj" default="build" basedir=".">
+    <property environment="env"/>
+    <property name="bin.home"           value="./bin"/>
+    <property name="src.home"           value="./src"/>
+    <property name="res.home"           value="./res"/>
+    <property name="src.includes"       value="**/*.java"/>
+
+    <!-- Path pointing to the base of the src and deploy directory -->
+    <path id="src.classpath">
+        <pathelement location="${src.home}"/>
+    </path>
+    
+     <!-- Amalgamation of the above paths -->
+    <path id="project.classpath">
+        <path refid="src.classpath" />
+    </path> 
+
+    <!-- clean target: Delete all files in ${deploy.home}  -->
+    <target name="clean" depends="" description="Delete all files in ${deploy.home}">
+        <!-- In case this is a new check out be sure deploy exists first -->
+        <mkdir dir="${bin.home}"/>
+
+        <delete includeEmptyDirs="true">
+            <fileset dir="${bin.home}" includes="**/*"/>
+        </delete>
+    </target>
+	
+    <target name="compile" depends="" description="Compile src files into ${bin.home}">
+        <javac srcdir="${src.home}"
+            destdir="${bin.home}"
+            includes="${src.includes}"
+			excludes="${src.excludes}"
+            debug="off"
+            optimize="on"
+            deprecation="on">
+    
+            <classpath>
+                <path refid="project.classpath" />
+            </classpath>
+        </javac>
+    </target>	
+	
+    <target name="prepare" depends="">
+        <!-- copy all non-java files over -->
+        <copy todir="${bin.home}" includeEmptyDirs="true" preservelastmodified="yes" overwrite="yes">
+            <fileset dir="${res.home}" excludes="**/*.java*"/>
+        </copy>
+
+        <copy todir="${bin.home}" includeEmptyDirs="false" preservelastmodified="yes" overwrite="yes">
+            <fileset dir="${src.home}" excludes="**/*.java*"/>
+        </copy>    	
+    	
+        <!--  make shell scripts executable -->
+        <chmod perm="ugo+x">
+            <fileset dir="${bin.home}">
+                <include name="**/*.sh"/>
+                <include name="**/run"/>
+            </fileset>
+        </chmod>
+    </target>
+	
+    <!-- build target:  Performs prepare and compile -->
+    <target name="build" depends="prepare, compile"/>
+    
+    <!-- rebuild target:  Performs clean, and build -->
+    <target name="rebuild" depends="clean, build"/>
+</project>
