@@ -1,5 +1,5 @@
-package engine.util;
-import java.math.*;
+package util;
+
 import java.util.Random;
 
 
