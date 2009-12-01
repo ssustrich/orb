@@ -19,7 +19,7 @@ public class Encounter {
 
 		        DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		        DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-		        Document doc = docBuilder.parse (new File("xml/encounter.xml"));
+		        Document doc = docBuilder.parse (new File("xml/encounterConfig.xml"));
 
 		        // normalize text representation
 		        doc.getDocumentElement ().normalize ();
