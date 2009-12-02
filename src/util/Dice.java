@@ -39,7 +39,7 @@ public class Dice {
 //		returns the total of the entire set AND populates the results
 //		individually.  That call would look like:
 		//get an Iterator object for Vector using iterator() method.
-	    System.out.println("Rolls in vector: " + Rolls.size());
+	    //DEBUG System.out.println("Rolls in vector: " + Rolls.size());
 	    
 	    //LEARN: I was going to use an iterator but the methods for Iterator seem limited
 	    //LEARN: Such as while i am going through the iterator I want to know what element I am at...
@@ -53,7 +53,7 @@ public class Dice {
 	    	//LEARN; think i found the explanation
 	    	//System.out.println("The result of roll" + counter +" is: " + this.result());
 	    	Dice currentElement = (Dice) itr.next();
-	    	System.out.println("The value of roll" + counter + " in the vector is: " + currentElement.result());
+	    	//DEBUG System.out.println("The value of roll" + counter + " in the vector is: " + currentElement.result());
 	    	total += currentElement.result() ;
 	    }
 		

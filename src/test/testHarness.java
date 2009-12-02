@@ -1,6 +1,10 @@
 package test;
 
 import engine.gamePlay.*;
+import util.UserInputReader;
+import util.ConfigReader;
+//import engine.gamePlay.PlayerCharacter;
+
 import java.util.Vector;
 
 import util.Dice;
@@ -13,6 +17,7 @@ public class testHarness {
 	 */
 	public  static void main(String[] args) {
 
+		System.out.println("***Begin Dice Test***");
 		//roll the dice two times
 		System.out.println("Quickroll 1 :" + Dice.quickRoll(3,6));
 		System.out.println("Quickroll 2 :" + Dice.quickRoll(3,6));
@@ -35,8 +40,29 @@ public class testHarness {
 		v.addElement(roll1);
 		v.add(roll2);		
 		System.out.println("The total value in the vector is: " + Dice.rollsVector(v));
+		System.out.println("***End Dice Test***");
+		System.out.println();
+		System.out.println();
 		
-		System.out.println("***");
+		System.out.println("***Begin Encounter Test***");
 		Encounter.test();
+		System.out.println("***End Encounter Test***");
+		System.out.println();
+		System.out.println();
+
+		System.out.println("***Begin PlayerCharacter Gen***");
+		PlayerCharacter test = new PlayerCharacter();
+		test.setCharName(UserInputReader.readString("Enter a string"));
+		test.setGold(UserInputReader.readInt("Enter an int (or anything else to test number format exception)"));
+		System.out.println(test.getCharName()+" has " + test.getGold() + " gold pieces");
+		System.out.println("Work now on reading character base config info and mod it");
+		ConfigReader charConfigTest = new ConfigReader();
+		charConfigTest.parseXmlFile("xml/characterConfig.xml");
+		charConfigTest.parseDocument("*");
+		charConfigTest.printData();
+		System.out.println("***End PlayerCharacter Gen***");
+		System.out.println();
+		System.out.println();
+	
 	}
 }

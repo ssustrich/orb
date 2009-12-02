@@ -6,7 +6,7 @@ import java.io.*;
 public class PlayerCharacter {
 	private String charName;
 	private HashMap charAttributes; //basic 6 attributes
-	private int charHP; //character hitpoints
+	private int charHP; //character hit points
 	private int charGold;  //character gold
 	private String charRace;
 	private String charClass;
