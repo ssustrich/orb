@@ -7,6 +7,7 @@
 		<hp>10</hp>
 		<armor>1</armor>
 	</base>
+	<races>
 	<race>
 		<type>Human</type>
 			<bonus>
@@ -29,6 +30,8 @@
 				<value>1</value>			
 			</penalty>
 	</race>
+	</races>
+	<classes>
 	<class>
 		<type>Fighter</type>
 			<bonus>
@@ -58,5 +61,6 @@
 				<attribute>DEX</attribute>
 				<value>1</value>			
 			</penalty>
-	</class>	
+	</class>
+	</classes>	
 </characterConfig>
