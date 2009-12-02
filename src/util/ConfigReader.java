@@ -11,7 +11,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException; 
 
 
-public class Parser {
+public class ConfigReader {
 
 		public static void test() {
 			
